@@ -1,2 +1,34 @@
+Ansible: 
+1. Intermittent issue: received below error when having morethan 1 instances for windows server.
+"msg": "kerberos: authGSSClientStep() failed: (('Unspecified GSS failure. Minor code may provide more information', 851968), ('TGT has been revoked', -1765328364))", "unreachable": true}
+Solution: CredSSP authentication issue. 
 
-test
+2. Getting "Permission denied error for NFS path in docker"
+Solution: In docker file, add the USER instruction. 
+
+3. Getting "kerberos unreachable error".
+Solution: DNS mapping was not done to map FQDN with IP address. With AD, mapping the FQDN so using FQDN instead of IP address. 
+
+
+Kubernetes: 
+1. Unable to access HTTPS URL.
+Solution: Added the server block in nginx config. 
+
+2. Liveness probe & readiness probe health check failed for Java springboot applications.
+Solution: It require to use /actuator/health.
+
+
+Other Issues:
+1. When java upgrade happens, it failed with SSL error.
+Solution: Instead of taking default java cacert path, use the custom path to store certificates.
+
+2. Getting the service error.
+Solution: Use the stonebranch service id instead of login id. 
+
+AWS:
+1. Partition size is not increased after increasing EBS volume size.
+Solution: growpart & resize2fs are commands require to increase size. 
+
+
+
+
