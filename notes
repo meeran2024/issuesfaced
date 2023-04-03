@@ -21,6 +21,7 @@ Solution: Added the server block in nginx config.
 2. Liveness probe & readiness probe health check failed for Java springboot applications.
 Solution: It require to use /actuator/health.
 
+3. Why pfx file is needed ? 
 
 Other Issues:
 1. When java upgrade happens, it failed with SSL error.
