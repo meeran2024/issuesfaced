@@ -1,7 +1,8 @@
 Ansible: 
 1. Intermittent issue: received below error when having morethan 1 instances for windows server.
 "msg": "kerberos: authGSSClientStep() failed: (('Unspecified GSS failure. Minor code may provide more information', 851968), ('TGT has been revoked', -1765328364))", "unreachable": true}
-Solution: CredSSP authentication issue. 
+Solution: Configuration changes in AD side. 
+          When ping domain name, its not reachable. 
 
 2. Getting "Permission denied error for NFS path in docker"
 Solution: In docker file, add the USER instruction. 
@@ -9,6 +10,9 @@ Solution: In docker file, add the USER instruction.
 3. Getting "kerberos unreachable error".
 Solution: DNS mapping was not done to map FQDN with IP address. With AD, mapping the FQDN so using FQDN instead of IP address. 
 
+4. Getting the error "kerberos: HTTPSConnectionPool(host='host-name', port=5986): Max retries exceeded with url: /wsman (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x99999>: Failed to establish a new connection"
+Solution: Winrm (Windows remote management) service was not running. 
+          Winrm service is enabled using userdata while infra creation.
 
 Kubernetes: 
 1. Unable to access HTTPS URL.
