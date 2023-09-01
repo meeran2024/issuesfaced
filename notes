@@ -34,6 +34,36 @@ AWS:
 1. Partition size is not increased after increasing EBS volume size.
 Solution: growpart & resize2fs are commands require to increase size. 
 
+---------------------------------------------------------------------------------------------------
+GIT:
+---------------------------------------------------------------------------------------------------
+1. Faced merge conflict issue.
+2. While pushing code, failed to push. need to pull again and then to push.
 
+---------------------------------------------------------------------------------------------------
+ANSIBLE:
+---------------------------------------------------------------------------------------------------
+1. Connection issue, winrm or ssm agent is not running.
+2. For windows, ensure dns mapping is done. 
+3. Indentation issue.
+4. Issue reported like variables are not updating:
+	Solution: Have to use the template under config folder.
+5. Permission Issue:
+	Config folders are copying 
+
+---------------------------------------------------------------------------------------------------
+TERRAFORM:
+---------------------------------------------------------------------------------------------------
+1. Interpolation error.
+2. Dependency cycle error.
+3. splat expression error if not list object.
+4. output argument is not mentioned in child module.
+5. state file lock error.
+
+---------------------------------------------------------------------------------------------------
+DOCKER:
+---------------------------------------------------------------------------------------------------
+1. Getting "Permission denied error for netapp path in docker"
+Solution: In docker file, add the USER instruction.
 
 
